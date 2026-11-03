@@ -6,10 +6,38 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
+             
+            // khai bao danh sach sinh vien
+            List<SinhVien> ds = new List<SinhVien>();
+            Console.WriteLine(" Nhap so luong sinh vien:");
+            int n = int.Parse(Console.ReadLine());
+
+            // nhap thong tin sinh vien
+            for (int i = 0; i < n; i++)
+            {
+                Console.WriteLine("\nNhap sinh vien thu:" + (i + 1));
+                Console.WriteLine("Ho ten: ");
+                string HT= Console.ReadLine();
+
+                Console.WriteLine("Que quan: ");
+                string QQ = Console.ReadLine();
+
+                Console.WriteLine("Diem toan: ");
+                double T = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Diem ly: ");
+                double L = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("Diem hoa: ");
+                double H = Convert.ToDouble(Console.ReadLine());
+
+                // tao doi tuong sinh vien
+                SinhVien sv1 = new SinhVien(HT, QQ, T, L, H);
+                ds.Add(sv1);
+
+            }
             // BT OPP
             Person person1 = new Person("Nam",175,67,true );
             Console.WriteLine(person1.Name + "\t" + person1.ChieuCao + "\t" + person1.weight + "\t"+ person1.isMale);
